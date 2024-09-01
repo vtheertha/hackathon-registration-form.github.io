@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon Registration</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+    <div class="container">  <!-- New container for flex layout -->
+        <div class="image-section">  <!-- Section for the image -->
+            <img src="hi.jpg" alt="Decorative Image" class="decorative-image">  <!-- Image with class -->
+        </div>
+        <div class="form-section">  <!-- Section for the form -->
+            <h2>Hackathon Registration Form</h2>
+            <form id="registrationForm" action="#" method="post" novalidate>
+                <!-- Name -->
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" pattern="^[A-Za-z][A-Za-z\s]*$" title="Name should start with an alphabet and contain only letters and spaces" required>
+                
+                <!-- Phone Number -->
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" pattern="^\d{10}$" title="Phone number should be 10 digits long and contain only numbers" required>
+                
+                <!-- Email -->
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <!-- Age -->
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="17" max="50" title="Enter your age." required>
+                
+                <!-- Category -->
+                <label for="category">I am a:</label>
+                <select id="category" name="category" required>
+                    <option value="">--Select--</option>
+                    <option value="student">Student</option>
+                    <option value="professional">Professional</option>
+                    <option value="coding_enthusiast">Coding Enthusiast</option>
+                </select>
+
+                <!-- Previous Experience -->
+                <label for="experience">Have you participated in a hackathon before?</label>
+                <select id="experience" name="experience" required>
+                    <option value="">--Select--</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+
+                <!-- Area of Expertise -->
+                <label for="expertise">What is your area of expertise or interest?</label>
+                <select id="expertise" name="expertise" required>
+                    <option value="" disabled selected>Select your area</option>
+                    <option value="Software Development">Software Development</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="Cybersecurity">Cybersecurity</option>
+                    <option value="Artificial Intelligence">Artificial Intelligence</option>
+                    <option value="Others">Others</option>
+                </select><br><br>
+
+                <!-- Participation Type -->
+                <label for="participation">Are you participating as:</label>
+                <select id="participation" name="participation" onchange="toggleTeamFields(this.value === 'team')" required>
+                    <option value="">--Select--</option>
+                    <option value="individual">Individual</option>
+                    <option value="team">Team</option>
+                </select>
+
+                <!-- Team Fields -->
+                <div id="teamFields" style="display: none;">
+                    <label for="teamName">Team Name:</label>
+                    <input type="text" id="teamName" name="teamName" pattern="^[A-Za-z0-9\s]+$" title="Team name can contain letters, numbers, and spaces" required>
+
+                    <label for="teamSize">Number of Team Members:</label>
+                    <select id="teamSize" name="teamSize" required>
+                        <option value="">--Select--</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+
+                    <label for="leaderName">Team Leader's Name:</label>
+                    <input type="text" id="leaderName" name="leaderName" pattern="^[A-Za-z][A-Za-z\s]*$" title="Name should start with an alphabet and contain only letters and spaces" required>
+                    
+                    <label for="memberNames">Team Member Names:</label>
+                    <textarea id="memberNames" name="memberNames" rows="3" placeholder="Enter names separated by commas" required></textarea>
+                </div>
+
+                <!-- Idea Description -->
+                <label for="idea">What is your idea?</label>
+                <textarea id="idea" name="idea" rows="4" required></textarea>
+
+                <!-- Problem Addressed -->
+                <label for="problem">What problem/challenge does it address?</label>
+                <textarea id="problem" name="problem" rows="4" required></textarea>
+
+                <!-- How Did You Hear About Us -->
+                <label for="referral">How did you hear about this Hackathon?</label>
+                <select id="referral" name="referral">
+                    <option value="">--Select--</option>
+                    <option value="social_media">Social Media</option>
+                    <option value="friends">Friends</option>
+                    <option value="email">Email</option>
+                    <option value="others">Others</option>
+                </select>
+
+                <!-- Submit Button -->
+                <button type="submit">Register</button>
+            </form>
+            <div id="successMessage" class="success-message">Registration Successful!</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to external JavaScript file -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
